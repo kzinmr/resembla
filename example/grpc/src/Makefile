@@ -38,7 +38,7 @@ _grpc:
 	$(MAKE) -C grpc
 
 resembla_server: resembla_server.o _grpc
-	$(CXX) -o $@ resembla_server.o $(RESEMBLA_GRPC_OBJS) $()
+	$(CXX) -o $@ resembla_server.o $(RESEMBLA_GRPC_OBJS) $(CXXLIBS)
 
 
 clean: $(SUBDIRS)
