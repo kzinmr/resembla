@@ -19,6 +19,7 @@
 # limitations under the License.
 
 import resembla_pb2
+import resembla_pb2_grpc
 
 import sys
 import grpc
@@ -27,7 +28,7 @@ _TIMEOUT_SECONDS = 10
 
 def run(server_address, queries):
   channel = grpc.insecure_channel(server_address)
-  resembla = resembla_pb2.ResemblaServiceStub(channel)
+  resembla = resembla_pb2_grpc.ResemblaServiceStub(channel)
 
   for s in queries:
     print ('query=%s' % s)
