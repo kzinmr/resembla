@@ -3,11 +3,10 @@
         "corpus_path": "../../corpus/corpus.tsv",
         "id_col": 1,
         "text_col": 2,
-        "features_col": 3,
         "verbose": true
     },
     "simstring": {
-        "ngram_unit": 2,
+        "ngram_unit": 4,
         "measure": "cosine",
         "threshold": 0.001
     },
@@ -19,10 +18,10 @@
         }
     },
     "resembla": {
-        "measure": "svr,weighted_word_edit_distance,weighted_pronunciation_edit_distance,weighted_romaji_edit_distance,keyword_match",
-        "max_reranking_num": 100,
-        "max_response": 10,
-        "threshold": 0.1
+        "measure": "weighted_word_edit_distance,weighted_pronunciation_edit_distance,weighted_romaji_edit_distance",
+        "max_reranking_num": 200,
+        "max_response": 200,
+        "threshold": 0.0
     },
     "edit_distance": {
         "ensemble_weight": 0
@@ -59,14 +58,6 @@
         "similar_letter_cost": 0.75,
         "mismatch_cost_path": "../../../example/conf/romaji_mismatch_cost.tsv",
         "ensemble_weight": 0.2
-    },
-    "svr": {
-        "simstring_ngram_unit": 3,
-        "simstring_threshold": 0.4,
-        "max_candidate": 100,
-        "features_path": "../../../example/regression/features.kw.tsv",
-        "patterns_home": "../../../example/regression/patterns",
-        "model_path": "../../../example/regression/model.kw"
     },
     "icu": {
         "enabled": true,
